@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Terminal, Cpu, Lock, Network, Binary, CheckCircle2, Server, Award } from 'lucide-react';
-import avatarImg from '../assets/images/avatar_esa_sanjaya_1790598193418.jpg';
+import avatarImg from '../assets/images/regenerated_image_1790605847690.jpg';
 import cyberTerminalImg from '../assets/images/cyber_security_terminal_1790599097930.jpg';
 
 export const ProfileTechStack: React.FC = () => {

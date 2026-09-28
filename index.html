@@ -658,6 +658,175 @@
       transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    /* Profile Photo Card & Frame */
+    .profile-header-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 24px;
+      padding: 16px;
+      background: rgba(10, 15, 26, 0.75);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+    }
+
+    .profile-photo-wrap {
+      position: relative;
+      width: 105px;
+      height: 105px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--cyan);
+      box-shadow: 0 0 20px rgba(0, 243, 255, 0.35);
+      cursor: pointer;
+    }
+
+    .profile-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .profile-photo-wrap:hover img {
+      transform: scale(1.08);
+    }
+
+    .profile-photo-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, transparent 65%, rgba(0, 243, 255, 0.25) 100%);
+      pointer-events: none;
+    }
+
+    .profile-meta-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .profile-name-tag {
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .profile-sub-tag {
+      font-size: 0.85rem;
+      color: var(--cyan);
+      font-family: var(--font-mono);
+    }
+
+    .profile-loc-tag {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Hobby Card Images */
+    .hobby-img-wrap {
+      width: 100%;
+      height: 220px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .hobby-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .tilt-card:hover .hobby-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .hobby-img-badge {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(7, 9, 14, 0.88);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+    }
+
+    /* Team Showcase Visuals in Split Panel */
+    .team-visual-box {
+      margin: 20px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      max-height: 230px;
+    }
+
+    .team-visual-box img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .split-panel:hover .team-visual-box img {
+      transform: scale(1.05);
+    }
+
+    .box-madrid {
+      border-color: rgba(255, 215, 0, 0.4);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.15);
+    }
+
+    .box-ferrari {
+      border-color: rgba(255, 24, 1, 0.45);
+      box-shadow: 0 10px 30px rgba(255, 24, 1, 0.2);
+    }
+
+    .team-visual-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      backdrop-filter: blur(6px);
+    }
+
+    .tag-madrid {
+      background: rgba(14, 30, 56, 0.9);
+      color: var(--madrid-gold);
+      border: 1px solid var(--madrid-gold);
+    }
+
+    .tag-ferrari {
+      background: rgba(24, 5, 5, 0.9);
+      color: #ff4d4d;
+      border: 1px solid var(--ferrari-red);
+    }
+
     /* Section Hobbies (3D Tilt Grid) */
     .hobbies-grid {
       display: grid;
@@ -1298,6 +1467,20 @@
         <div class="profile-grid">
           <!-- Tentang Saya & Visi -->
           <article class="card-glass reveal">
+            <!-- Foto Pertama: Profil Esa Sanjaya -->
+            <div class="profile-header-card">
+              <div class="profile-photo-wrap" title="Klik untuk memuat atau menyegarkan foto profil">
+                <img id="profile-user-img" src="/src/assets/images/regenerated_image_1790605847690.jpg" alt="Foto Profil Esa Sanjaya" referrerPolicy="no-referrer" />
+                <input type="file" id="profile-photo-input" accept="image/*" style="display: none;" />
+              </div>
+              <div class="profile-meta-wrap">
+                <span class="profile-name-tag">Esa Sanjaya</span>
+                <span class="profile-sub-tag">&lt;CyberSec Aspirant /&gt;</span>
+                <span class="profile-loc-tag">📍 Universitas Negeri Medan (UNIMED)</span>
+                <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--matrix); margin-top: 4px;">● OPERATOR VERIFIED</span>
+              </div>
+            </div>
+
             <h3 style="font-size: 1.35rem; color: #fff; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
               Visi & Eksplorasi Keamanan Siber
@@ -1356,7 +1539,7 @@
               <div class="skill-item">
                 <div class="skill-label">
                   <span>Dasar Jaringan Komputer & OSI Layer</span>
-                  <span style="color: var(--matrix)">Eksplorasi Siber</span>
+                  <span style="color: var(--matrix)">Masih Belajar</span>
                 </div>
                 <div class="skill-bar-bg">
                   <div class="skill-bar-fill" style="width: 60%;"></div>
@@ -1366,7 +1549,7 @@
               <div class="skill-item">
                 <div class="skill-label">
                   <span>Sistem Operasi Linux & Terminal CLI</span>
-                  <span style="color: var(--matrix)">Fondasi Sistem</span>
+                  <span style="color: var(--matrix)">Masih Belajar</span>
                 </div>
                 <div class="skill-bar-bg">
                   <div class="skill-bar-fill" style="width: 65%;"></div>
@@ -1391,6 +1574,11 @@
           <!-- Kartu 1: Membaca Komik -->
           <article class="tilt-card reveal" data-tilt>
             <div class="tilt-card-inner">
+              <!-- Foto Kedua: Hobi Membaca Komik -->
+              <div class="hobby-img-wrap">
+                <img src="My fav thing.jpg" alt="Koleksi Komik & Manga Favorit Esa Sanjaya" referrerPolicy="no-referrer" />
+                <span class="hobby-img-badge">📖 MANGA & ANIME REALM</span>
+              </div>
               <div class="card-icon-wrap">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
               </div>
@@ -1409,6 +1597,11 @@
           <!-- Kartu 2: Gaming & Hardware -->
           <article class="tilt-card reveal" data-tilt>
             <div class="tilt-card-inner">
+              <!-- Foto Ketiga: Hobi Bermain Game -->
+              <div class="hobby-img-wrap">
+                <img src="cat.jpg" alt="Gaming Setup & Logic Tactics" referrerPolicy="no-referrer" />
+                <span class="hobby-img-badge">🎮 PRO GAMING & HARDWARE</span>
+              </div>
               <div class="card-icon-wrap">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 10 10 6 14 10 10 14 6 10"/><polygon points="12 16 16 12 20 16 16 20 12 16"/><circle cx="12" cy="12" r="10"/></svg>
               </div>
@@ -1445,6 +1638,13 @@
                 <span>¡Hala Madrid!</span>
               </div>
               <h3 class="team-title title-madrid">Real <span>Madrid</span> C.F.</h3>
+
+              <!-- Foto Keempat: Tim Favorit Real Madrid -->
+              <div class="team-visual-box box-madrid">
+                <img src="hala madrid.jpg" alt="Foto Real Madrid - KING MADRID" referrerPolicy="no-referrer" />
+                <span class="team-visual-tag tag-madrid" style="text-align: left;">KING MADRID</span>
+              </div>
+
               <p class="team-desc">
                 Simbol mentalitas pantang menyerah dan tradisi juara tertinggi di dunia sepak bola. Falsafah <em>"¡Hasta El Final!"</em> membuktikan bahwa kemenangan sejati dibangun dari ketangguhan psikologis, soliditas tim, dan ambisi tak terpadamkan untuk selalu mengukir sejarah emas.
               </p>
@@ -1470,6 +1670,13 @@
                 <span>Scuderia Ferrari</span>
               </div>
               <h3 class="team-title title-ferrari">Rosso <span>Corsa</span> F1</h3>
+
+              <!-- Foto Kelima: Tim Favorit Ferrari -->
+              <div class="team-visual-box box-ferrari">
+                <img src="FERARİ.jpg" onerror="this.onerror=null; this.src='FERARI.jpg';" alt="Foto Scuderia Ferrari F1" referrerPolicy="no-referrer" />
+                <span class="team-visual-tag tag-ferrari">🏎️ ESSERE FERRARI</span>
+              </div>
+
               <p class="team-desc">
                 Puncak perpaduan seni rekayasa aerodinamika, inovasi mesin bertenaga tinggi, dan decitan kecepatan di balapan Formula 1. Filosofi <em>"Essere Ferrari"</em> merefleksikan dedikasi tanpa henti pada presisi teknis, presisi telemetri, dan kesetiaan abadi bersama jutaan pendukung Tifosi.
               </p>
@@ -1820,6 +2027,39 @@
           modalOverlay.classList.remove('active');
         }
       });
+
+      /* ==========================================================
+         7. PROFILE USER PHOTO PERSISTENCE & LOCAL SELECTION
+         ========================================================== */
+      const profileImg = document.getElementById('profile-user-img');
+      const photoWrap = profileImg ? profileImg.parentElement : null;
+      const photoInput = document.getElementById('profile-photo-input');
+
+      // Clear legacy cache to ensure new image displays immediately
+      try {
+        localStorage.removeItem('esa_user_profile_img');
+      } catch (err) {}
+
+      if (photoWrap && photoInput && profileImg) {
+        photoWrap.addEventListener('click', () => {
+          photoInput.click();
+        });
+
+        photoInput.addEventListener('change', (e) => {
+          const file = e.target.files && e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = (evt) => {
+              const res = evt.target.result;
+              profileImg.src = res;
+              try {
+                localStorage.setItem('esa_user_profile_img', res);
+              } catch (storageErr) {}
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      }
 
     });
   </script>

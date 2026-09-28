@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Atom, Compass, Code, Users, Award, BookOpen, Layers, CheckCircle2 } from 'lucide-react';
-import avatarImg from '../assets/images/avatar_esa_sanjaya_1790598193418.jpg';
+import avatarImg from '../assets/images/regenerated_image_1790605847690.jpg';
 
 export const AboutVision: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'akademik' | 'visi' | 'organisasi'>('visi');
